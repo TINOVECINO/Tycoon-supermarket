@@ -1,0 +1,21 @@
+{
+  "name": "SupermarketEmpire",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "LihFolk": { "$path": "src/lib/shared" },
+      "Game": { "$path": "src/shared" }
+    },
+    "ServerScriptService": {
+      "LihFolk": { "$path": "src/lib/server" },
+      "GameServer": { "$path": "src/server" },
+      "Main": { "$path": "src/Main.server.luau" }
+    },
+    "StarterPlayer": {
+      "StarterPlayerScripts": {
+        "GameClient": { "$path": "src/client" },
+        "ClientMain": { "$path": "src/ClientMain.client.luau" }
+      }
+    }
+  }
+}
