@@ -17,7 +17,9 @@ local World = {}
 
 local C = Kit.C
 local FRONT = -12 -- the store's front wall, in plot space
-local H = 12 -- floor to eave: one storey (10-12), 2-3 avatar heights so the camera does not clip
+-- Floor to eave. Set at the start of each Render from the stage (12 for the Kiosco, +2 per stage),
+-- so a bigger store is also a taller one. Render never yields, so two plots cannot mix heights.
+local H = 12
 local DOOR_W, DOOR_H = 8, 8
 local PLOT_W, PLOT_D = 120, 110
 local PYLON_H = 26 -- the plot's landmark: 2x the store, seen from the street and the spawn
@@ -30,6 +32,7 @@ export type Slot = {
 	Owner: Player?,
 	Store: Model?,
 	PadFolder: Folder?,
+	PadParts: { { base: BasePart, dot: BasePart, price: number, label: TextLabel } },
 	Shelves: { [string]: Model },
 	RegisterLabel: TextLabel?,
 	Register: BasePart?,
@@ -150,11 +153,6 @@ local function buildPlot(parent: Instance, index: number, cf: CFrame): Slot
 		Kit.ball(folder, "HedgeEnd", 4.4, at(sx * (PLOT_W / 2 - 1.5), 2.2, -PLOT_D / 2 + 13), C.leaf)
 		Kit.tree(folder, at(sx * (PLOT_W / 2 - 9), 0, hz - 8), 1.25)
 	end
-	-- the upgrade bay, right of the walk: where the buy pads appear
-	Kit.deco(folder, "Bay", Vector3.new(12, 0.06, 12), at(14, 0.03, -34), C.wallShade)
-	for _, e in { { 14, -40.2, 12.6, 0.6 }, { 14, -27.8, 12.6, 0.6 }, { 8, -34, 0.6, 12 }, { 20, -34, 0.6, 12 } } do
-		Kit.deco(folder, "BayLine", Vector3.new(e[3], 0.08, e[4]), at(e[1], 0.04, e[2]), C.limeDark)
-	end
 
 	-- pylon: the landmark of the plot
 	local px, pz = 34, -20 -- ahead of the spawn and beside the door: in view on arrival
@@ -182,6 +180,7 @@ local function buildPlot(parent: Instance, index: number, cf: CFrame): Slot
 		PylonFaces = faces,
 		DepotLabel = nil,
 		DepotStacks = {},
+		PadParts = {},
 	}
 	setPylon(slot, "EN ALQUILER", "terreno " .. index, C.metalDark)
 	return slot
@@ -863,6 +862,7 @@ function World.Render(rec: any)
 	store.Name = "Store"
 	local size = World.Size(data.Stage)
 	local color = Kit.STAGE[data.Stage]
+	H = 10 + data.Stage * 2
 	drawShell(slot, store, data, size, color)
 	drawRegister(slot, store, size)
 	for _, p in Config.Products do
@@ -939,6 +939,7 @@ function World.Pads(rec: any, pads: { any })
 	end
 	local folder = Instance.new("Folder")
 	folder.Name = "Pads"
+	slot.PadParts = {}
 	for _, pad in pads do
 		local x, z = padSpot(rec.Data.Stage, pad)
 		local big = pad.kind == "stage"
@@ -946,10 +947,18 @@ function World.Pads(rec: any, pads: { any })
 		Kit.pole(folder, "Rim", d + 1.2, 0.6, World.ToWorld(slot, Vector3.new(x, 0.3, z)), C.black)
 		local base = Kit.pole(folder, "Pad_" .. pad.kind, d, 0.5, World.ToWorld(slot, Vector3.new(x, 0.6, z)), C.lime, { CanCollide = true, CanTouch = true })
 		Kit.pole(folder, "Ring", d * 0.7, 0.1, World.ToWorld(slot, Vector3.new(x, 0.88, z)), C.limeDark)
-		Kit.pole(folder, "Dot", d * 0.58, 0.1, World.ToWorld(slot, Vector3.new(x, 0.9, z)), C.lime)
+		local dot = Kit.pole(folder, "Dot", d * 0.58, 0.1, World.ToWorld(slot, Vector3.new(x, 0.9, z)), C.lime)
 		local b = if big then Kit.billboard(base, "Label", 9, 2.4, 4, 110) else Kit.billboard(base, "Label", 6.5, 1.8, 3, 60)
 		Kit.label(b, pad.name, 0.5)
-		Kit.label(b, "$" .. pad.price, 0.5, C.lime)
+		local priceLabel = Kit.label(b, "$" .. pad.price, 0.5, C.lime)
+		table.insert(slot.PadParts, { base = base, dot = dot, price = pad.price, label = priceLabel })
+		if big then
+			-- the bay: a marked square on the ground for the store's next size
+			Kit.deco(folder, "Bay", Vector3.new(12, 0.06, 12), World.ToWorld(slot, Vector3.new(x, 0.03, z)), C.wallShade)
+			for _, e in { { 0, -6.2, 12.6, 0.6 }, { 0, 6.2, 12.6, 0.6 }, { -6, 0, 0.6, 12 }, { 6, 0, 0.6, 12 } } do
+				Kit.deco(folder, "BayLine", Vector3.new(e[3], 0.08, e[4]), World.ToWorld(slot, Vector3.new(x + e[1], 0.04, z + e[2])), C.limeDark)
+			end
+		end
 		local busy = false
 		base.Touched:Connect(function(hit: BasePart)
 			local player = ownerOf(hit)
@@ -965,6 +974,22 @@ function World.Pads(rec: any, pads: { any })
 	end
 	folder.Parent = slot.Folder
 	slot.PadFolder = folder
+	World.PadsAfford(rec)
+end
+
+-- Lime means "you can pay this now". A pad out of reach goes dark with its price in red.
+function World.PadsAfford(rec: any)
+	local slot: Slot = rec.Slot
+	local cash = rec.Player:GetAttribute("Cash")
+	if type(cash) ~= "number" then
+		return
+	end
+	for _, pad in slot.PadParts do
+		local can = cash >= pad.price
+		pad.base.Color = if can then C.lime else C.metalDark
+		pad.dot.Color = if can then C.lime else C.metalDark
+		pad.label.TextColor3 = if can then C.lime else C.red
+	end
 end
 
 function World.OnPad(fn: (Player, string, string) -> ())

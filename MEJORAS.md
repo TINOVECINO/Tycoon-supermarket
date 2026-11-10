@@ -15,12 +15,14 @@ Marcas: `[x]` hecho · `[~]` hecho pero sin probar en Studio · `[ ]` pendiente.
 - [~] Empleados que se contratan y capacitan manteniendo E, con nombre y nivel.
 - [~] Plata por minuto en el HUD.
 - [~] Nivel con XP (+2% por venta por nivel) y panel con las 3 misiones en curso.
+- [~] El recuadro de "Ampliar" desaparece al llegar a la última etapa.
+- [~] El edificio gana altura en cada etapa (12 en el Kiosco, 20 en el Hipermercado).
+- [~] Los botones que no podés pagar se apagan y muestran el precio en rojo.
 
 ## Pendiente — jugabilidad
 
 - [ ] Flechas en el piso que guían al próximo paso (tutorial de los primeros minutos).
 - [ ] Barra de "próxima meta" arriba al centro, con progreso de plata.
-- [ ] Botones de compra de otro color cuando no alcanza la plata.
 - [ ] Mostrar más de una mini compra a la vez, para que siempre haya algo que comprar.
 - [ ] Ganancia mientras estás desconectado (con tope de 2 horas).
 - [ ] Tabla de los más ricos del servidor.
@@ -36,6 +38,22 @@ Marcas: `[x]` hecho · `[~]` hecho pero sin probar en Studio · `[ ]` pendiente.
 - [ ] Árboles de los terrenos con los pinos del pack.
 - [ ] Revisar las etapas 3 a 5 por cosas encimadas.
 - [ ] Probar en celular (tamaño de botones y del panel de misiones).
+
+- [ ] El HUD se encima con el panel de misiones cuando la ventana es angosta.
+- [ ] Carteles de botones y de "SE BUSCA" ilegibles de lejos.
+- [ ] Autos del estacionamiento más trabajados (hoy son dos bloques).
+- [ ] Llenar el piso vacío entre la calle y el local.
+
+## Para el final — historia
+
+Acordado dejarlo para cuando lo construido esté pulido.
+
+- [ ] "Heredaste el kiosco del abuelo": arranca roto y las primeras compras son arreglos.
+- [ ] Capítulos por etapa en vez de misiones sueltas.
+- [ ] Rival visible enfrente (MegaMax) que reacciona cuando lo superás.
+- [ ] Vecinos con nombre que piden productos.
+- [ ] Sucursales como barrios distintos.
+- [ ] Final: comprar el MegaMax.
 
 ## Pendiente — antes de publicar
 

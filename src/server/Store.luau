@@ -642,6 +642,7 @@ function Store.Init()
 		local rec = Store.Recs[player]
 		if rec then
 			rec.PushPending = true -- affordability shows in the UI
+			task.defer(World.PadsAfford, rec) -- after Currency has published the new balance
 		end
 	end)
 	Passes.Changed:Connect(function(player: Player)

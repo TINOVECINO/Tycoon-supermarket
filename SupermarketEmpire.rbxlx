@@ -1,4 +1,4 @@
-<roblox version="4"><External>null</External><External>nil</External><Item class="Workspace" referent="RBX110BF4FB557246698A24D1EE1156929E"><Properties><string name="Name">Workspace</string><bool name="StreamingEnabled">true</bool></Properties></Item><Item class="ReplicatedStorage" referent="RBX99894AB94DE7473F8564B8FE2F2F25AE"><Properties><string name="Name">ReplicatedStorage</string></Properties><Item class="Folder" referent="RBX53D36C88D4A6459B98C3EBE5225E690A"><Properties><string name="Name">LihFolk</string></Properties><Item class="ModuleScript" referent="RBX5DE611DADF3A4D74A82C44B456D806D1"><Properties><string name="Name">Net</string><ProtectedString name="Source"><![CDATA[--!strict
+<roblox version="4"><External>null</External><External>nil</External><Item class="Workspace" referent="RBX3BD6233C382B4B16BD227FF5EDAFD77D"><Properties><string name="Name">Workspace</string><bool name="StreamingEnabled">true</bool></Properties></Item><Item class="ReplicatedStorage" referent="RBXCEC43AA6833F44C1AE05819D35784CDD"><Properties><string name="Name">ReplicatedStorage</string></Properties><Item class="Folder" referent="RBXEF5ECB0EDFEC43A48FD2B6B62D7B6D0C"><Properties><string name="Name">LihFolk</string></Properties><Item class="ModuleScript" referent="RBXC106EEEF28E547F4A9A9B53A1C885092"><Properties><string name="Name">Net</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: Net
 -- Install: ReplicatedStorage/LihFolk/Net (ModuleScript)
 --
@@ -411,7 +411,7 @@ function Net.On(name: string, fn: (...any) -> ()): RBXScriptConnection
 end
 
 return Net
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX76B49BD336384201931A652BAA58159C"><Properties><string name="Name">RateLimit</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXEC4D538040B843DDB622F4A7157E090E"><Properties><string name="Name">RateLimit</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: RateLimit
 -- Install: ReplicatedStorage/LihFolk/RateLimit (ModuleScript)
 -- Token bucket per key (normally a Player). A bucket holds up to `burst` tokens
@@ -512,7 +512,7 @@ function RateLimit.Peek(self: LimiterImpl, key: any): number
 end
 
 return RateLimit
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXEAF26FEB6D5841549A46573E84300A86"><Properties><string name="Name">Signal</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXBB33ADDFE2F040CFBBCAA88963548D87"><Properties><string name="Name">Signal</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: Signal
 -- Install: ReplicatedStorage/LihFolk/Signal (ModuleScript)
 -- A small, dependency-free event object for module-to-module events.
@@ -634,7 +634,7 @@ end
 Signal.Destroy = Signal.DisconnectAll
 
 return Signal
-]]></ProtectedString></Properties></Item></Item><Item class="Folder" referent="RBX436B9E9EA8444ED6A92DBCABC92D26FD"><Properties><string name="Name">Game</string></Properties><Item class="ModuleScript" referent="RBX16798EFA9A9D44ED895CBEB7E43A1E05"><Properties><string name="Name">AssetIds</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="Folder" referent="RBX157D4ADAF19D4D4CBBAA0F22F983EE89"><Properties><string name="Name">Game</string></Properties><Item class="ModuleScript" referent="RBX7A3573968D5B4842A96F23B774C80E3D"><Properties><string name="Name">AssetIds</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Every Roblox id the game uses, in one place. 0 = not set yet: the game keeps working and
 -- the Tienda shows "configurá el id" instead of prompting a purchase.
 
@@ -676,7 +676,7 @@ return {
 		electro = "rbxassetid://90339274502937",
 	},
 }
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXEE1C2F0C23DA43A7A8B1F925A5D48307"><Properties><string name="Name">FolkStudUI</string><ProtectedString name="Source"><![CDATA[--[[ FolkStudUI (ModuleScript): white stud menus for Roblox.
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX24AD55C612AF4A0BA197DBEE09897FAB"><Properties><string name="Name">FolkStudUI</string><ProtectedString name="Source"><![CDATA[--[[ FolkStudUI (ModuleScript): white stud menus for Roblox.
 	M.shop, M.quests, M.backpack, M.index, M.settings, M.rebirth and M.hud, each (parent, cfg), build a ScreenGui. Call them from Studio in Edit mode so the GUI is editable in StarterGui,
 	or at runtime. Nothing at runtime depends on rebuilding: M.live(gui, handlers) finds everything by attribute.
 
@@ -1759,7 +1759,7 @@ function M.setTracker(gui, d)
 end
 
 return M
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX857032C6C30A49CCA07757AAD52DE73D"><Properties><string name="Name">GameConfig</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX4BF93B16AD6C4149A8445D248966944A"><Properties><string name="Name">GameConfig</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: every number of the economy lives here. Shared, so the UI
 -- shows the same prices the server charges. The server never reads a price from the client.
 
@@ -1919,7 +1919,7 @@ end
 
 -- Extra cash given on join when playing inside Studio, to test late-game things fast.
 -- Ignored on live servers. Leave it at 0 for a normal start.
-Config.StudioTestCash = 40000
+Config.StudioTestCash = 5000000
 
 Config.PlayerData = {
 	storeName = "SupermarketEmpire_v1", -- never rename after launch
@@ -1933,7 +1933,7 @@ Config.Currency = {
 }
 
 return Config
-]]></ProtectedString></Properties></Item></Item></Item><Item class="ServerScriptService" referent="RBX58E722B5A0E4417197C8EB2C4945004E"><Properties><string name="Name">ServerScriptService</string></Properties><Item class="Folder" referent="RBX9A19148CB6954B61A6665674A51669DC"><Properties><string name="Name">LihFolk</string></Properties><Item class="ModuleScript" referent="RBX3A57D19F74434B5A8F284AA738E51D64"><Properties><string name="Name">Currency</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item></Item><Item class="ServerScriptService" referent="RBXBEB5A741C3F341599C8AD3603F199C68"><Properties><string name="Name">ServerScriptService</string></Properties><Item class="Folder" referent="RBX5D6E8AAE9E8E4AEA8A593CF8B6B63220"><Properties><string name="Name">LihFolk</string></Properties><Item class="ModuleScript" referent="RBXD1603E2D17FB4E0698A759071AD18D26"><Properties><string name="Name">Currency</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: Currency
 -- Install: ServerScriptService/LihFolk/Currency (ModuleScript)
 --
@@ -2201,7 +2201,7 @@ end
 -- so there is no PlayerRemoving cleanup to do.
 
 return Currency
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX10524168D49441649B2CD2C85376F164"><Properties><string name="Name">PlayerData</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXE787447648194A3A95D5F7AE93417199"><Properties><string name="Name">PlayerData</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: PlayerData
 -- Install: ServerScriptService/LihFolk/PlayerData (ModuleScript)
 --
@@ -2977,7 +2977,7 @@ PlayerData._internal = {
 }
 
 return PlayerData
-]]></ProtectedString></Properties></Item></Item><Item class="Folder" referent="RBX073930FE4C694BD5A71FCEFBD9548F16"><Properties><string name="Name">GameServer</string></Properties><Item class="ModuleScript" referent="RBX081BAD9354314CF28D9777B02B0A735A"><Properties><string name="Name">Customers</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="Folder" referent="RBXE668343545344F9397F6685C754F0262"><Properties><string name="Name">GameServer</string></Properties><Item class="ModuleScript" referent="RBX8E3521C9587244D0810D30CC6D458AA0"><Properties><string name="Name">Customers</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: customers. They walk in from the road, pick 1-3 unlocked products,
 -- take each one if it is in stock and the price suits them, pay at the register and leave.
 -- Bodies are two anchored-and-welded parts moved by tweens, so they cost no physics.
@@ -3096,7 +3096,7 @@ function Customers.Init()
 end
 
 return Customers
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXD1EA7816AF634F7D8293FE47C45C373F"><Properties><string name="Name">Kit</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX75DDFA43BFE34AFBABA63B9E521E2A34"><Properties><string name="Name">Kit</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: small building blocks shared by Scenery and World, and the palette from
 -- docs/world-brief.md. Everything is anchored; decoration never collides, touches or is queried.
 -- Status: reviewed, not run in Studio.
@@ -3340,7 +3340,7 @@ function Kit.boxes(parent: Instance, cf: CFrame): Model
 end
 
 return Kit
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX7175BDA149DB43E4A53EB87C7AD9D18E"><Properties><string name="Name">Passes</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX2379FB385D9847CE982DA9155518066A"><Properties><string name="Name">Passes</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Game passes: who owns what, checked on the server. An id of 0 in AssetIds means the pass
 -- is not set up yet, so nobody owns it and nothing is prompted.
 -- Status: reviewed, not run in Studio.
@@ -3412,7 +3412,7 @@ function Passes.Init()
 end
 
 return Passes
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX10EC8BA44BD1422CA09F72478A289290"><Properties><string name="Name">Scenery</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXC0E7570BD1324D6D9CED69F171E9F1C2"><Properties><string name="Name">Scenery</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the street everything sits on (docs/world-brief.md). Ground, road,
 -- sidewalks, the central hero tower, the tree line and backdrop that contain the space,
 -- and the "bright cartoon" lighting preset. Static: built once when the server starts.
@@ -3702,7 +3702,7 @@ function Scenery.Build(): Folder
 end
 
 return Scenery
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX83EBD4320F6C47BD84AEC3EC424D5D70"><Properties><string name="Name">Store</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX10A8A1CBD4C1430E8401EE965E425F27"><Properties><string name="Name">Store</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the store of each player. Owns the "Store" data slice, every
 -- purchase (pads, stock, staff, branches), the register and the state sent to the owner.
 -- Every price comes from GameConfig on the server; the client only sends ids.
@@ -4346,6 +4346,7 @@ function Store.Init()
 		local rec = Store.Recs[player]
 		if rec then
 			rec.PushPending = true -- affordability shows in the UI
+			task.defer(World.PadsAfford, rec) -- after Currency has published the new balance
 		end
 	end)
 	Passes.Changed:Connect(function(player: Player)
@@ -4489,7 +4490,7 @@ function Store.Init()
 end
 
 return Store
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXA1F67B8E34FC474988890BF9B9281D2B"><Properties><string name="Name">World</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX384316567A24406AAEDDF3A4ADF3A158"><Properties><string name="Name">World</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the six plots and every store on them (docs/world-brief.md).
 -- Draws a player's store from their data (stage, shelves, staff, upgrades) and runs the buy
 -- pads and the register. The street itself is Scenery.luau; shared pieces are Kit.luau.
@@ -4508,7 +4509,9 @@ local World = {}
 
 local C = Kit.C
 local FRONT = -12 -- the store's front wall, in plot space
-local H = 12 -- floor to eave: one storey (10-12), 2-3 avatar heights so the camera does not clip
+-- Floor to eave. Set at the start of each Render from the stage (12 for the Kiosco, +2 per stage),
+-- so a bigger store is also a taller one. Render never yields, so two plots cannot mix heights.
+local H = 12
 local DOOR_W, DOOR_H = 8, 8
 local PLOT_W, PLOT_D = 120, 110
 local PYLON_H = 26 -- the plot's landmark: 2x the store, seen from the street and the spawn
@@ -4521,6 +4524,7 @@ export type Slot = {
 	Owner: Player?,
 	Store: Model?,
 	PadFolder: Folder?,
+	PadParts: { { base: BasePart, dot: BasePart, price: number, label: TextLabel } },
 	Shelves: { [string]: Model },
 	RegisterLabel: TextLabel?,
 	Register: BasePart?,
@@ -4641,11 +4645,6 @@ local function buildPlot(parent: Instance, index: number, cf: CFrame): Slot
 		Kit.ball(folder, "HedgeEnd", 4.4, at(sx * (PLOT_W / 2 - 1.5), 2.2, -PLOT_D / 2 + 13), C.leaf)
 		Kit.tree(folder, at(sx * (PLOT_W / 2 - 9), 0, hz - 8), 1.25)
 	end
-	-- the upgrade bay, right of the walk: where the buy pads appear
-	Kit.deco(folder, "Bay", Vector3.new(12, 0.06, 12), at(14, 0.03, -34), C.wallShade)
-	for _, e in { { 14, -40.2, 12.6, 0.6 }, { 14, -27.8, 12.6, 0.6 }, { 8, -34, 0.6, 12 }, { 20, -34, 0.6, 12 } } do
-		Kit.deco(folder, "BayLine", Vector3.new(e[3], 0.08, e[4]), at(e[1], 0.04, e[2]), C.limeDark)
-	end
 
 	-- pylon: the landmark of the plot
 	local px, pz = 34, -20 -- ahead of the spawn and beside the door: in view on arrival
@@ -4673,6 +4672,7 @@ local function buildPlot(parent: Instance, index: number, cf: CFrame): Slot
 		PylonFaces = faces,
 		DepotLabel = nil,
 		DepotStacks = {},
+		PadParts = {},
 	}
 	setPylon(slot, "EN ALQUILER", "terreno " .. index, C.metalDark)
 	return slot
@@ -5354,6 +5354,7 @@ function World.Render(rec: any)
 	store.Name = "Store"
 	local size = World.Size(data.Stage)
 	local color = Kit.STAGE[data.Stage]
+	H = 10 + data.Stage * 2
 	drawShell(slot, store, data, size, color)
 	drawRegister(slot, store, size)
 	for _, p in Config.Products do
@@ -5430,6 +5431,7 @@ function World.Pads(rec: any, pads: { any })
 	end
 	local folder = Instance.new("Folder")
 	folder.Name = "Pads"
+	slot.PadParts = {}
 	for _, pad in pads do
 		local x, z = padSpot(rec.Data.Stage, pad)
 		local big = pad.kind == "stage"
@@ -5437,10 +5439,18 @@ function World.Pads(rec: any, pads: { any })
 		Kit.pole(folder, "Rim", d + 1.2, 0.6, World.ToWorld(slot, Vector3.new(x, 0.3, z)), C.black)
 		local base = Kit.pole(folder, "Pad_" .. pad.kind, d, 0.5, World.ToWorld(slot, Vector3.new(x, 0.6, z)), C.lime, { CanCollide = true, CanTouch = true })
 		Kit.pole(folder, "Ring", d * 0.7, 0.1, World.ToWorld(slot, Vector3.new(x, 0.88, z)), C.limeDark)
-		Kit.pole(folder, "Dot", d * 0.58, 0.1, World.ToWorld(slot, Vector3.new(x, 0.9, z)), C.lime)
+		local dot = Kit.pole(folder, "Dot", d * 0.58, 0.1, World.ToWorld(slot, Vector3.new(x, 0.9, z)), C.lime)
 		local b = if big then Kit.billboard(base, "Label", 9, 2.4, 4, 110) else Kit.billboard(base, "Label", 6.5, 1.8, 3, 60)
 		Kit.label(b, pad.name, 0.5)
-		Kit.label(b, "$" .. pad.price, 0.5, C.lime)
+		local priceLabel = Kit.label(b, "$" .. pad.price, 0.5, C.lime)
+		table.insert(slot.PadParts, { base = base, dot = dot, price = pad.price, label = priceLabel })
+		if big then
+			-- the bay: a marked square on the ground for the store's next size
+			Kit.deco(folder, "Bay", Vector3.new(12, 0.06, 12), World.ToWorld(slot, Vector3.new(x, 0.03, z)), C.wallShade)
+			for _, e in { { 0, -6.2, 12.6, 0.6 }, { 0, 6.2, 12.6, 0.6 }, { -6, 0, 0.6, 12 }, { 6, 0, 0.6, 12 } } do
+				Kit.deco(folder, "BayLine", Vector3.new(e[3], 0.08, e[4]), World.ToWorld(slot, Vector3.new(x + e[1], 0.04, z + e[2])), C.limeDark)
+			end
+		end
 		local busy = false
 		base.Touched:Connect(function(hit: BasePart)
 			local player = ownerOf(hit)
@@ -5456,6 +5466,22 @@ function World.Pads(rec: any, pads: { any })
 	end
 	folder.Parent = slot.Folder
 	slot.PadFolder = folder
+	World.PadsAfford(rec)
+end
+
+-- Lime means "you can pay this now". A pad out of reach goes dark with its price in red.
+function World.PadsAfford(rec: any)
+	local slot: Slot = rec.Slot
+	local cash = rec.Player:GetAttribute("Cash")
+	if type(cash) ~= "number" then
+		return
+	end
+	for _, pad in slot.PadParts do
+		local can = cash >= pad.price
+		pad.base.Color = if can then C.lime else C.metalDark
+		pad.dot.Color = if can then C.lime else C.metalDark
+		pad.label.TextColor3 = if can then C.lime else C.red
+	end
 end
 
 function World.OnPad(fn: (Player, string, string) -> ())
@@ -5471,7 +5497,7 @@ function World.OnRegister(fn: (Player) -> ())
 end
 
 return World
-]]></ProtectedString></Properties></Item></Item><Item class="Script" referent="RBX72218779F5BB498C9D7242797E728E86"><Properties><string name="Name">Main</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="Script" referent="RBXFAC47C6B9D38421A9A4405571B058AF9"><Properties><string name="Name">Main</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the only server Script. Order matters:
 --   map -> data config -> services (slices + remotes) -> load players.
 -- Status: reviewed, not run in Studio.
@@ -5506,7 +5532,7 @@ Customers.Init()
 
 -- 3. Load players last
 PlayerData.Start()
-]]></ProtectedString></Properties></Item></Item><Item class="StarterPlayer" referent="RBXAFD5C8738FA0483ABE3CCC0E6C3C3606"><Properties><string name="Name">StarterPlayer</string></Properties><Item class="StarterPlayerScripts" referent="RBXFFDCE482BC1E4E1B9D39AB9A7CFA68DF"><Properties><string name="Name">StarterPlayerScripts</string></Properties><Item class="Folder" referent="RBXA2C5BEF4A102497AA173C21EB14AFD5E"><Properties><string name="Name">GameClient</string></Properties><Item class="ModuleScript" referent="RBX6F0922AE82C542BD952F774FD02C3CB7"><Properties><string name="Name">Ui</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="StarterPlayer" referent="RBX4E2882306FE0448FA4435C9608426BF0"><Properties><string name="Name">StarterPlayer</string></Properties><Item class="StarterPlayerScripts" referent="RBX2F866E411E26459B9C8A453AEAA57451"><Properties><string name="Name">StarterPlayerScripts</string></Properties><Item class="Folder" referent="RBX5AFBE12519DF46CFBFFA35FA25A5CC09"><Properties><string name="Name">GameClient</string></Properties><Item class="ModuleScript" referent="RBX2CC08B497ABD4E1E98ECDF717DD0E907"><Properties><string name="Name">Ui</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: every screen, built at runtime from the Folk Stud UI kit and the
 -- shared GameConfig, then kept up to date from the server's State messages.
 -- The client only asks; the server checks and answers. Nothing here changes money.
@@ -5955,7 +5981,7 @@ function Ui.Start()
 end
 
 return Ui
-]]></ProtectedString></Properties></Item></Item><Item class="LocalScript" referent="RBXEA51F9C1D736438EACB8A48E5D5267C0"><Properties><string name="Name">ClientMain</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="LocalScript" referent="RBX91DC53B990AE4356B3DD6934B00DD48C"><Properties><string name="Name">ClientMain</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the only LocalScript. Builds the UI and connects it to the server.
 local Ui = require(script.Parent:WaitForChild("GameClient"):WaitForChild("Ui"))
 Ui.Start()

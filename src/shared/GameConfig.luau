@@ -158,7 +158,7 @@ end
 
 -- Extra cash given on join when playing inside Studio, to test late-game things fast.
 -- Ignored on live servers. Leave it at 0 for a normal start.
-Config.StudioTestCash = 40000
+Config.StudioTestCash = 5000000
 
 Config.PlayerData = {
 	storeName = "SupermarketEmpire_v1", -- never rename after launch
