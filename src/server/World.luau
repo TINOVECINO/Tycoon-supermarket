@@ -830,10 +830,9 @@ local function drawStaff(slot: Slot, store: Model, data: any, size: Vector2)
 		else
 			Kit.pole(store, "VacancyPole", 0.3, 4, cf * CFrame.new(0, 2, 0), C.metal)
 			anchor = Kit.deco(store, "Vacancy", Vector3.new(3.2, 1.6, 0.25), cf * CFrame.new(0, 4.6, 0), C.wood)
-			Kit.sign(anchor, Enum.NormalId.Front, "SE BUSCA
-" .. string.upper(def.name), C.white)
-			Kit.sign(anchor, Enum.NormalId.Back, "SE BUSCA
-" .. string.upper(def.name), C.white)
+			for _, face in { Enum.NormalId.Front, Enum.NormalId.Back } do
+				Kit.sign(anchor, face, "SE BUSCA\n" .. string.upper(def.name), C.white)
+			end
 		end
 		if price then
 			local prompt = Instance.new("ProximityPrompt")

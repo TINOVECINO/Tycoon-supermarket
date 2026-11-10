@@ -1,4 +1,4 @@
-<roblox version="4"><External>null</External><External>nil</External><Item class="Workspace" referent="RBX8543EE387CE74F6994F1799793035DAC"><Properties><string name="Name">Workspace</string><bool name="StreamingEnabled">true</bool></Properties></Item><Item class="ReplicatedStorage" referent="RBX6F18E1E7C5CB467AA9409E06E7B0E70F"><Properties><string name="Name">ReplicatedStorage</string></Properties><Item class="Folder" referent="RBXF8010CE6E1614A71AFB413E3CC48E643"><Properties><string name="Name">LihFolk</string></Properties><Item class="ModuleScript" referent="RBXCB784F4B020F428BB9FC39C5B42755F0"><Properties><string name="Name">Net</string><ProtectedString name="Source"><![CDATA[--!strict
+<roblox version="4"><External>null</External><External>nil</External><Item class="Workspace" referent="RBX110BF4FB557246698A24D1EE1156929E"><Properties><string name="Name">Workspace</string><bool name="StreamingEnabled">true</bool></Properties></Item><Item class="ReplicatedStorage" referent="RBX99894AB94DE7473F8564B8FE2F2F25AE"><Properties><string name="Name">ReplicatedStorage</string></Properties><Item class="Folder" referent="RBX53D36C88D4A6459B98C3EBE5225E690A"><Properties><string name="Name">LihFolk</string></Properties><Item class="ModuleScript" referent="RBX5DE611DADF3A4D74A82C44B456D806D1"><Properties><string name="Name">Net</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: Net
 -- Install: ReplicatedStorage/LihFolk/Net (ModuleScript)
 --
@@ -411,7 +411,7 @@ function Net.On(name: string, fn: (...any) -> ()): RBXScriptConnection
 end
 
 return Net
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX749D6279ECBB4FE5A0D80EC6F1703299"><Properties><string name="Name">RateLimit</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX76B49BD336384201931A652BAA58159C"><Properties><string name="Name">RateLimit</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: RateLimit
 -- Install: ReplicatedStorage/LihFolk/RateLimit (ModuleScript)
 -- Token bucket per key (normally a Player). A bucket holds up to `burst` tokens
@@ -512,7 +512,7 @@ function RateLimit.Peek(self: LimiterImpl, key: any): number
 end
 
 return RateLimit
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX38EEC378A43443A69DA824FB488BA042"><Properties><string name="Name">Signal</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXEAF26FEB6D5841549A46573E84300A86"><Properties><string name="Name">Signal</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: Signal
 -- Install: ReplicatedStorage/LihFolk/Signal (ModuleScript)
 -- A small, dependency-free event object for module-to-module events.
@@ -634,7 +634,7 @@ end
 Signal.Destroy = Signal.DisconnectAll
 
 return Signal
-]]></ProtectedString></Properties></Item></Item><Item class="Folder" referent="RBX9ED0EBA507AE4065BE2AD3C2068582D0"><Properties><string name="Name">Game</string></Properties><Item class="ModuleScript" referent="RBX2422B3575A864EBBA3CC499913F243BC"><Properties><string name="Name">AssetIds</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="Folder" referent="RBX436B9E9EA8444ED6A92DBCABC92D26FD"><Properties><string name="Name">Game</string></Properties><Item class="ModuleScript" referent="RBX16798EFA9A9D44ED895CBEB7E43A1E05"><Properties><string name="Name">AssetIds</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Every Roblox id the game uses, in one place. 0 = not set yet: the game keeps working and
 -- the Tienda shows "configurá el id" instead of prompting a purchase.
 
@@ -676,7 +676,7 @@ return {
 		electro = "rbxassetid://90339274502937",
 	},
 }
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX09D42E349E364475BFD8BB6FC8F001C8"><Properties><string name="Name">FolkStudUI</string><ProtectedString name="Source"><![CDATA[--[[ FolkStudUI (ModuleScript): white stud menus for Roblox.
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXEE1C2F0C23DA43A7A8B1F925A5D48307"><Properties><string name="Name">FolkStudUI</string><ProtectedString name="Source"><![CDATA[--[[ FolkStudUI (ModuleScript): white stud menus for Roblox.
 	M.shop, M.quests, M.backpack, M.index, M.settings, M.rebirth and M.hud, each (parent, cfg), build a ScreenGui. Call them from Studio in Edit mode so the GUI is editable in StarterGui,
 	or at runtime. Nothing at runtime depends on rebuilding: M.live(gui, handlers) finds everything by attribute.
 
@@ -1759,7 +1759,7 @@ function M.setTracker(gui, d)
 end
 
 return M
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX0EEB6AE581C1496C8F86DF637E585F88"><Properties><string name="Name">GameConfig</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX857032C6C30A49CCA07757AAD52DE73D"><Properties><string name="Name">GameConfig</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: every number of the economy lives here. Shared, so the UI
 -- shows the same prices the server charges. The server never reads a price from the client.
 
@@ -1933,7 +1933,7 @@ Config.Currency = {
 }
 
 return Config
-]]></ProtectedString></Properties></Item></Item></Item><Item class="ServerScriptService" referent="RBXF1D37E99045642D19FA02DDCCA3DD02F"><Properties><string name="Name">ServerScriptService</string></Properties><Item class="Folder" referent="RBX08581DBAB541442E9FC3CAE8C1EA232A"><Properties><string name="Name">LihFolk</string></Properties><Item class="ModuleScript" referent="RBX33B0BB27B8CD4562B457383352A322DC"><Properties><string name="Name">Currency</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item></Item><Item class="ServerScriptService" referent="RBX58E722B5A0E4417197C8EB2C4945004E"><Properties><string name="Name">ServerScriptService</string></Properties><Item class="Folder" referent="RBX9A19148CB6954B61A6665674A51669DC"><Properties><string name="Name">LihFolk</string></Properties><Item class="ModuleScript" referent="RBX3A57D19F74434B5A8F284AA738E51D64"><Properties><string name="Name">Currency</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: Currency
 -- Install: ServerScriptService/LihFolk/Currency (ModuleScript)
 --
@@ -2201,7 +2201,7 @@ end
 -- so there is no PlayerRemoving cleanup to do.
 
 return Currency
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX65EAEE2BD82446F6B6DA6C31394422FB"><Properties><string name="Name">PlayerData</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX10524168D49441649B2CD2C85376F164"><Properties><string name="Name">PlayerData</string><ProtectedString name="Source"><![CDATA[--!strict
 -- LihFolk Systems: PlayerData
 -- Install: ServerScriptService/LihFolk/PlayerData (ModuleScript)
 --
@@ -2977,7 +2977,7 @@ PlayerData._internal = {
 }
 
 return PlayerData
-]]></ProtectedString></Properties></Item></Item><Item class="Folder" referent="RBX791B6675CB814A5890297E2CFE3143EB"><Properties><string name="Name">GameServer</string></Properties><Item class="ModuleScript" referent="RBXB38922E7524E4279B09B165BF57BF633"><Properties><string name="Name">Customers</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="Folder" referent="RBX073930FE4C694BD5A71FCEFBD9548F16"><Properties><string name="Name">GameServer</string></Properties><Item class="ModuleScript" referent="RBX081BAD9354314CF28D9777B02B0A735A"><Properties><string name="Name">Customers</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: customers. They walk in from the road, pick 1-3 unlocked products,
 -- take each one if it is in stock and the price suits them, pay at the register and leave.
 -- Bodies are two anchored-and-welded parts moved by tweens, so they cost no physics.
@@ -3096,7 +3096,7 @@ function Customers.Init()
 end
 
 return Customers
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX2437FEB283BF41298F3F0B234E2DAF71"><Properties><string name="Name">Kit</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXD1EA7816AF634F7D8293FE47C45C373F"><Properties><string name="Name">Kit</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: small building blocks shared by Scenery and World, and the palette from
 -- docs/world-brief.md. Everything is anchored; decoration never collides, touches or is queried.
 -- Status: reviewed, not run in Studio.
@@ -3340,7 +3340,7 @@ function Kit.boxes(parent: Instance, cf: CFrame): Model
 end
 
 return Kit
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX91B73B8388384BAB976D916D946104A9"><Properties><string name="Name">Passes</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX7175BDA149DB43E4A53EB87C7AD9D18E"><Properties><string name="Name">Passes</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Game passes: who owns what, checked on the server. An id of 0 in AssetIds means the pass
 -- is not set up yet, so nobody owns it and nothing is prompted.
 -- Status: reviewed, not run in Studio.
@@ -3412,7 +3412,7 @@ function Passes.Init()
 end
 
 return Passes
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX9592ACA38EEB4493BD956DE83B2058C4"><Properties><string name="Name">Scenery</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX10EC8BA44BD1422CA09F72478A289290"><Properties><string name="Name">Scenery</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the street everything sits on (docs/world-brief.md). Ground, road,
 -- sidewalks, the central hero tower, the tree line and backdrop that contain the space,
 -- and the "bright cartoon" lighting preset. Static: built once when the server starts.
@@ -3702,7 +3702,7 @@ function Scenery.Build(): Folder
 end
 
 return Scenery
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX3C7642528E514E789D4B8A74475A565B"><Properties><string name="Name">Store</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX83EBD4320F6C47BD84AEC3EC424D5D70"><Properties><string name="Name">Store</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the store of each player. Owns the "Store" data slice, every
 -- purchase (pads, stock, staff, branches), the register and the state sent to the owner.
 -- Every price comes from GameConfig on the server; the client only sends ids.
@@ -4489,7 +4489,7 @@ function Store.Init()
 end
 
 return Store
-]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBX684DBAF166E54C9481718196B24248BB"><Properties><string name="Name">World</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item><Item class="ModuleScript" referent="RBXA1F67B8E34FC474988890BF9B9281D2B"><Properties><string name="Name">World</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the six plots and every store on them (docs/world-brief.md).
 -- Draws a player's store from their data (stage, shelves, staff, upgrades) and runs the buy
 -- pads and the register. The street itself is Scenery.luau; shared pieces are Kit.luau.
@@ -5321,10 +5321,9 @@ local function drawStaff(slot: Slot, store: Model, data: any, size: Vector2)
 		else
 			Kit.pole(store, "VacancyPole", 0.3, 4, cf * CFrame.new(0, 2, 0), C.metal)
 			anchor = Kit.deco(store, "Vacancy", Vector3.new(3.2, 1.6, 0.25), cf * CFrame.new(0, 4.6, 0), C.wood)
-			Kit.sign(anchor, Enum.NormalId.Front, "SE BUSCA
-" .. string.upper(def.name), C.white)
-			Kit.sign(anchor, Enum.NormalId.Back, "SE BUSCA
-" .. string.upper(def.name), C.white)
+			for _, face in { Enum.NormalId.Front, Enum.NormalId.Back } do
+				Kit.sign(anchor, face, "SE BUSCA\n" .. string.upper(def.name), C.white)
+			end
 		end
 		if price then
 			local prompt = Instance.new("ProximityPrompt")
@@ -5472,7 +5471,7 @@ function World.OnRegister(fn: (Player) -> ())
 end
 
 return World
-]]></ProtectedString></Properties></Item></Item><Item class="Script" referent="RBX13D80CFCD18643BCA6A8A47CB09C281F"><Properties><string name="Name">Main</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="Script" referent="RBX72218779F5BB498C9D7242797E728E86"><Properties><string name="Name">Main</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the only server Script. Order matters:
 --   map -> data config -> services (slices + remotes) -> load players.
 -- Status: reviewed, not run in Studio.
@@ -5507,7 +5506,7 @@ Customers.Init()
 
 -- 3. Load players last
 PlayerData.Start()
-]]></ProtectedString></Properties></Item></Item><Item class="StarterPlayer" referent="RBX122002B2CD7742F19B271DB30B6A0C3D"><Properties><string name="Name">StarterPlayer</string></Properties><Item class="StarterPlayerScripts" referent="RBXBCACF596A2A642DBBF29952145D6B76B"><Properties><string name="Name">StarterPlayerScripts</string></Properties><Item class="Folder" referent="RBXA18011153F0048E3A5E5F125874E5DBC"><Properties><string name="Name">GameClient</string></Properties><Item class="ModuleScript" referent="RBXFF7AF3BE779C4FFD8E5C8E498D67CD79"><Properties><string name="Name">Ui</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="StarterPlayer" referent="RBXAFD5C8738FA0483ABE3CCC0E6C3C3606"><Properties><string name="Name">StarterPlayer</string></Properties><Item class="StarterPlayerScripts" referent="RBXFFDCE482BC1E4E1B9D39AB9A7CFA68DF"><Properties><string name="Name">StarterPlayerScripts</string></Properties><Item class="Folder" referent="RBXA2C5BEF4A102497AA173C21EB14AFD5E"><Properties><string name="Name">GameClient</string></Properties><Item class="ModuleScript" referent="RBX6F0922AE82C542BD952F774FD02C3CB7"><Properties><string name="Name">Ui</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: every screen, built at runtime from the Folk Stud UI kit and the
 -- shared GameConfig, then kept up to date from the server's State messages.
 -- The client only asks; the server checks and answers. Nothing here changes money.
@@ -5956,7 +5955,7 @@ function Ui.Start()
 end
 
 return Ui
-]]></ProtectedString></Properties></Item></Item><Item class="LocalScript" referent="RBX4F0055E0DF4B4EFA968D716710C338A0"><Properties><string name="Name">ClientMain</string><ProtectedString name="Source"><![CDATA[--!strict
+]]></ProtectedString></Properties></Item></Item><Item class="LocalScript" referent="RBXEA51F9C1D736438EACB8A48E5D5267C0"><Properties><string name="Name">ClientMain</string><ProtectedString name="Source"><![CDATA[--!strict
 -- Supermarket Empire: the only LocalScript. Builds the UI and connects it to the server.
 local Ui = require(script.Parent:WaitForChild("GameClient"):WaitForChild("Ui"))
 Ui.Start()
